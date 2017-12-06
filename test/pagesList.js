@@ -1,14 +1,14 @@
-const token = require('./token.js');
+const config = require('./config.js');
 const crowi = require('../lib/crowi.js');
 
 const client = new crowi({
-  baseUrl : 'http://demo.crowi.wiki',
-  token : token.token,
+  baseUrl : config.baseURL,
+  token : config.token,
 });
 
 const test = async () => {
   //path
-  client.api('pages.list', {path : '/'}).
+  await client.api('pages.list', {path : '/'}).
     then(data => console.log(data)).
     catch(data => console.log(data));
   client.api('pages.list', {path : '/'}, (err, body) => {
@@ -17,7 +17,7 @@ const test = async () => {
   });
 
   //user
-  client.api('pages.list', {user : 'to-hutohu'}).
+  await client.api('pages.list', {user : 'to-hutohu'}).
     then(data => console.log(data)).
     catch(data => console.log(data));
   client.api('pages.list', {user : 'to-hutohu'}, (err, body) => {
@@ -26,7 +26,7 @@ const test = async () => {
   });
 
   //error
-  client.api('pages.list', {}).
+  await client.api('pages.list', {}).
     then(data => console.log(data)).
     catch(data => console.log(data));
   client.api('pages.list', {}, (err, body) => {
