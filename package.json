@@ -1,6 +1,6 @@
 {
   "name": "crowi-node",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "crowi client",
   "main": "./lib/crowi.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/tohutohu/crowi-node.git"
   },
-  "author": "Ohashi Koya <tohu.soy@gmail.com>",
+  "author": "to-hutohu <tohu.soy@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tohutohu/crowi-node/issues"
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/tohutohu/crowi-node#readme",
   "devDependencies": {
     "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "request": "^2.83.0"
   }
 }
